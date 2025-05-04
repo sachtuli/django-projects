@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "studentApp/base.html" %} {% block body_block %}
+    <h1>Students</h1>
+    <table border="1">
+      <thead>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Test Score</th>
+      </thead>
+      {% for student in object_list %}
+      <tr>
+        <td><a href="/student/{{ student.id }}">{{ student.id }}</a></td>
+        <td>{{ student.firstName }}</td>
+        <td>{{ student.lastName }}</td>
+        <td>{{ student.testScore }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+</br> </br> </br> 
+    <a href="/student/create/">Create New Student</a>
+{% endblock %}
